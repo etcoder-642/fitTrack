@@ -62,7 +62,25 @@ void showAbout() {
 }
 
 // WRITTEN BY MESUD
+void logFood(User &u) {
+    string foods[] = {"Doro Wot", "Shiro", "Misir Wot", "Rice(Bowl)", "Egg", "Bread(Slice)"};
+    int cals[] = {350, 200, 220, 205, 78, 79};
 
+    cout << "\n--- FOOD DATABASE ---\n";
+    for(int i = 0; i < 6; i++) {
+        cout << i + 1 << ". " << left << setw(15) << foods[i] << "(" << cals[i] << " kcal)" << endl;
+    }
+    cout << "7. Custom Entry" << endl;
+
+    int choice = getInt("Select food (1-7): ");
+    if (choice >= 1 && choice <= 6) {
+        int servings = getInt("How many servings? ");
+        u.currentCalories += (cals[choice - 1] * servings);
+        cout << "✅ Logged " << (cals[choice - 1] * servings) << " calories.\n";
+    } else if (choice == 7) {
+        u.currentCalories += getInt("Enter custom calories: ");
+    }
+}
 // WRITTEN BY KIDUS
 
 void logExercise(User &u) {
