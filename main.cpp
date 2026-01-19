@@ -76,7 +76,7 @@ void logFood(User &u) {
     if (choice >= 1 && choice <= 6) {
         int servings = getInt("How many servings? ");
         u.currentCalories += (cals[choice - 1] * servings);
-        cout << "✅ Logged " << (cals[choice - 1] * servings) << " calories.\n";
+        cout << "Logged " << (cals[choice - 1] * servings) << " calories.\n";
     } else if (choice == 7) {
         u.currentCalories += getInt("Enter custom calories: ");
     }
@@ -98,7 +98,7 @@ void logExercise(User &u) {
         int mins = getInt("Duration in minutes: ");
         int burned = (int)(burnRate[choice - 1] * mins);
         u.currentCalories -= burned;
-        cout << "🔥 You burned " << burned << " calories!\n";
+        cout << "You burned " << burned << " calories!\n";
     } else if (choice == 6) {
         u.currentCalories -= getInt("Enter calories burned: ");
     }
@@ -199,15 +199,15 @@ int main() {
             else if (choice == 2) logExercise(database[currentUserIndex]);
             else if (choice == 3) {
                 database[currentUserIndex].waterIntake++;
-                cout << "💧 Water logged! (" << database[currentUserIndex].waterIntake << "/8)\n";
+                cout << "Water logged! (" << database[currentUserIndex].waterIntake << "/8)\n";
             }
             else if (choice == 4) showReport(database[currentUserIndex]);
         } while (choice != 5);
 
         saveToFile(database, userCount);
-        cout << "\nData saved successfully. Stay healthy!\n";
+        cout << "\n Data saved successfully. Stay healthy!\n";
     } else {
-        cout << "\n❌ Access Denied: Incorrect username or password.\n";
+        cout << "\n Access Denied: Incorrect username or password.\n";
     }
 
     system("pause");
