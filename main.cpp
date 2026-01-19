@@ -65,6 +65,26 @@ void showAbout() {
 
 // WRITTEN BY KIDUS
 
+void logExercise(User &u) {
+    string activities[] = {"Running", "Walking", "Cycling", "Swimming", "Weightlifting"};
+    float burnRate[] = {11.4, 4.0, 8.0, 10.0, 5.0}; // kcal per minute
+
+    cout << "\n--- EXERCISE DATABASE ---\n";
+    for(int i = 0; i < 5; i++) {
+        cout << i + 1 << ". " << left << setw(15) << activities[i] << "(" << burnRate[i] << " kcal/min)" << endl;
+    }
+    cout << "6. Custom Entry" << endl;
+
+    int choice = getInt("Select activity (1-6): ");
+    if (choice >= 1 && choice <= 5) {
+        int mins = getInt("Duration in minutes: ");
+        int burned = (int)(burnRate[choice - 1] * mins);
+        u.currentCalories -= burned;
+        cout << "🔥 You burned " << burned << " calories!\n";
+    } else if (choice == 6) {
+        u.currentCalories -= getInt("Enter calories burned: ");
+    }
+}
 // WRITTEN BY MANASSEH SAMUEL
 // --- REPORT & BMI LOGIC ---
 void showReport(User u) {
