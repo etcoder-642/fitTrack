@@ -53,7 +53,7 @@ float getFloat(string prompt) {
         }
     }
 }
-
+//WRITTEN BY MESERET 
 // --- APP INFORMATION ---
 void showAbout() {
     cout << "\n==============================================" << endl;
@@ -68,6 +68,7 @@ void showAbout() {
 // WRITTEN BY MESUD
 void logFood(User &u) {
     string foods[] = {"Doro Wot", "Shiro", "Misir Wot", "Rice(Bowl)", "Egg", "Bread(Slice)"};
+//Calorie values are approximate per standard serving 
     int cals[] = {350, 200, 220, 205, 78, 79};
 
     cout << "\n--- FOOD DATABASE ---\n";
