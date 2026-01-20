@@ -1,3 +1,7 @@
+// FitTrack v1.0
+// A console-based health tracking application that allows users
+// to track calories, water intake, BMI, and basic fitness data.
+// WRITTEN BY : LIDIYA GOSSAYE
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -127,7 +131,6 @@ void showReport(User u) {
     else cout << "Result: You are OVER your goal by " << abs(remaining) << " calories!" << endl;
     cout << "==============================================\n" << endl;
 }
-
 // --- FILE DATABASE SYSTEM ---
 void saveToFile(User db[], int count) {
     ofstream f("data.txt");
@@ -150,7 +153,6 @@ void loadFromFile(User db[], int &count) {
     }
     f.close();
 }
-
 // --- MAIN CONTROL CENTER ---
 int main() {
     User database[100];
